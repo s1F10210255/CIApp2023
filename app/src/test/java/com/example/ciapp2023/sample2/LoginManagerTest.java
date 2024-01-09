@@ -18,9 +18,9 @@ public class LoginManagerTest {
 
     @Test
     public void testLoginSuccess() throws LoginFailedException, UserNotFoundException {
-        User user = loginManager.login("testuser1", "password");
+        User user = loginManager.login("testuser1", "Password");
         assertThat(user.getUsername(), is("testuser1"));
-        assertThat(user.getPassword(), is("password"));
+        assertThat(user.getPassword(), is("Password"));
     }
 
     @Test(expected = LoginFailedException.class)
