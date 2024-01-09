@@ -24,9 +24,14 @@ public class LoginManager {
 //        return username.matches("^[a-zA-Z0-9]{4,}$");
 //    }
 
-    private boolean isUsernameValid(String username) {
-        return username.matches("^(?=.*[A-Z])[a-zA-Z0-9]{4,}$");
+//    private boolean isUsernameValid(String username) {
+//        return username.matches("^(?=.*[A-Z])[a-zA-Z0-9]{4,}$");
+//    }
+
+    private boolean isUsernameValid(String username){
+        return username.matches("^[a-zA-Z0-9]{4,}$");
     }
+
 
 
     private boolean isPasswordValid(String password) {
