@@ -28,7 +28,7 @@ public class LoginManager {
         return password.matches("^[a-zA-Z0-9]{8,}$");
     }
 
-    public User login(String username, String password) throws LoginFailedException {
+    public User login(String username, String password) throws UserNotFoundException,LoginFailedException {
         if (users.containsKey(username)) {
             if (users.get(username).getPassword().equals(password)) {
                 return users.get(username);
@@ -36,8 +36,7 @@ public class LoginManager {
                 throw new LoginFailedException("Password not match");
             }
         } else {
-            throw new LoginFailedException("User does not exist");
+            throw  new UserNotFoundException("User does not exists");
         }
-
     }
 }
