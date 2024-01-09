@@ -20,9 +20,14 @@ public class LoginManager {
         users.put(username, new User(username, password));
     }
 
+//    private boolean isUsernameValid(String username) {
+//        return username.matches("^[a-zA-Z0-9]{4,}$");
+//    }
+
     private boolean isUsernameValid(String username) {
-        return username.matches("^[a-zA-Z0-9]{4,}$");
+        return username.matches("^(?=.*[A-Z])[a-zA-Z0-9]{4,}$");
     }
+
 
     private boolean isPasswordValid(String password) {
         return password.matches("^[a-zA-Z0-9]{8,}$");
