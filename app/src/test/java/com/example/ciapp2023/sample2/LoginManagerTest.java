@@ -17,19 +17,19 @@ public class LoginManagerTest {
     }
 
     @Test
-    public void testLoginSuccess() throws LoginFailedException {
+    public void testLoginSuccess() throws LoginFailedException, UserNotFoundException {
         User user = loginManager.login("testuser1", "password");
         assertThat(user.getUsername(), is("testuser1"));
         assertThat(user.getPassword(), is("password"));
     }
 
     @Test(expected = LoginFailedException.class)
-    public void testLoginWrongPassword() throws LoginFailedException {
+    public void testLoginWrongPassword() throws LoginFailedException, UserNotFoundException {
         User user = loginManager.login("testuser1", "1234");
     }
 
     @Test(expected = LoginFailedException.class)
-    public void testLoginUnregisteredUser() throws LoginFailedException {
+    public void testLoginUnregisteredUser() throws LoginFailedException, UserNotFoundException {
         User user = loginManager.login("iniad", "password");
     }
 }
