@@ -25,7 +25,7 @@ public class LoginManager {
     }
 
     private boolean isPasswordValid(String password) {
-        return password.matches("^[a-zA-Z0-9]{8,}$");
+        return password.matches("^(?=.*?[A-Z])[a-zA-Z0-9]{8,}$");
     }
 
     public User login(String username, String password) throws InvalidPasswordException ,LoginFailedException {

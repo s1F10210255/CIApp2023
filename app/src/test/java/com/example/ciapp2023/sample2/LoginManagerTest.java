@@ -18,9 +18,9 @@ public class LoginManagerTest {
 
     @Test
     public void testLoginSuccess() throws LoginFailedException, InvalidPasswordException {
-        User user = loginManager.login("testuser1", "password");
-        assertThat(user.getUsername(), is("testuser1"));
-        assertThat(user.getPassword(), is("password"));
+        User user = loginManager.login("Testuser1", "Password");
+        assertThat(user.getUsername(), is("Testuser1"));
+        assertThat(user.getPassword(), is("Password"));
     }
 
     @Test
